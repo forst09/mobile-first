@@ -1,0 +1,19 @@
+@use '/src/styles/utils/reset';
+
+@use 'swiper/css';
+@use 'swiper/css/navigation';
+@use "@fancyapps/ui/dist/fancybox/fancybox.css";
+
+@use '/src/styles/utils/system-styles';
+@use '/src/styles/utils/mixin';
+@use '/src/styles/utils/fonts';
+@use '/src/styles/utils/variables';
+@use '/src/styles/utils/common';
+
+@use '/src/styles/components/btn';
+@use '/src/styles/components/title';
+@use '/src/styles/components/socials';
+@use '/src/styles/components/header';
+
+@use '/src/styles/sections/main';
+

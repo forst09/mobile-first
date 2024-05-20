@@ -1,0 +1,123 @@
+@use "../utils/mixin" as m;
+
+.title-lg {
+    span {
+        color: var(--text-secondary);
+    }
+}
+
+.title {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 1.3em;
+    color: var(--text-secondary);
+
+    span {
+        color: var(--text-accent-secondary);
+    }
+}
+
+.subtitle {
+    position: relative;
+    font-weight: 400;
+    line-height: 1.25em;
+    font-size: 16px;
+    color: var(--text-secondary);
+    padding: 20px 32px;
+    border: 1px solid var(--stroke);
+    width: fit-content;
+    border-radius: var(--br-xl);
+    margin-left: 60px;
+
+    &::before {
+        content: counters(subtitle, ".", decimal-leading-zero);
+        position: absolute;
+        left: -60px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 60px;
+        height: auto;
+        aspect-ratio: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--stroke);
+        border-radius: 50%;
+    }
+
+    &--sticky {
+        position: sticky;
+        top: 130px;
+    }
+}
+.title-decor {
+    &__wrap {
+        display: inline-flex;
+        gap: 32px;
+        align-items: center;
+        padding-right: 32px;
+    }
+
+    &__decor {
+        width: 160px;
+    height: auto;
+    aspect-ratio: 1 / 0.4;
+    border-radius: var(--br-l);
+    overflow: hidden;
+    }
+}
+
+.title-arrows {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+@include m.laptop {
+    .title-decor {
+        &__wrap {
+            gap: 24px;
+            padding-right: 24px;
+        }
+
+        &__decor {
+            width: 130px;
+        }
+    }
+
+    .title {
+        font-size: 34px;
+    }
+}
+
+@include m.tablet-s {
+    .title-decor {
+        &__wrap {
+            padding-right: 9px;
+        }
+
+        &__decor {
+            display: none;
+        }
+    }
+}
+
+@include m.mobile {
+    .subtitle {
+        font-size: 14px;
+        line-height: 16px;
+        margin-left: 40px;
+        padding: 11px 20px;
+
+        &::before {
+            width: 40px;
+            left: -40px;
+        }
+    }
+
+    .title {
+        font-size: 24px;
+    }
+}

@@ -1,0 +1,38 @@
+@use "../utils/mixin" as m;
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &__item {
+        position: relative;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.33em;
+        padding-left: 16px;
+        color: var(--text-secondary);
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 4px;
+            height: auto;
+            aspect-ratio: 1;
+            background-color: var(--text-secondary);
+            border-radius: 50%;
+        }
+    }
+}
+
+@include m.mobile {
+    .list {
+        gap: 4px;
+
+        &__item {
+            font-size: 14px;
+        }
+    }
+}

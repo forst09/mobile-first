@@ -1,0 +1,176 @@
+@use '../utils/mixin' as m;
+
+.main {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+
+    &-content {
+        position: relative;
+        background-color: var(--bg-primary);
+        // background-color: blueviolet;
+        border-radius: 40px;
+        // padding-top: 192px;
+        border-radius: var(--br-l);
+        // overflow: hidden;
+        // margin-top: -66px;
+        z-index: 20;
+    }
+
+    &-content__wrap {
+        position: relative;
+        --overlayOpacity: 0;
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-primary);
+            opacity: var(--overlayOpacity);
+            z-index: 10;
+            pointer-events: none;
+            border-radius: var(--br-l);
+        }
+    }
+
+    &__banner {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+
+        img {
+            object-position: right;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        // padding-bottom: 14vh;
+        padding-bottom: 70px;
+    }
+
+    &__text-bottom {
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+    }
+
+    &__container {
+        padding-top: 26.5vh;
+        flex-grow: 1;
+        display: flex;
+    }
+}
+
+@include m.laptop {
+    .main {
+        &__container {
+            padding-top: 21vh;
+        }
+
+        &-content {
+            // margin-top: -5vh;
+        }
+    }
+}
+
+@include m.tablet {
+	.main {
+        height: calc(100vh + 60px);
+
+       &__banner img {
+            object-position: 27%;
+            // height: 101%;
+        }
+
+       &__text {    
+            padding-bottom: 10vh;
+        }
+
+        &-content {
+            // border-radius: unset;
+            margin-top: -60px;
+        }
+       
+    }
+}
+
+@media (max-width: 768px), ((max-width: 860px) and (orientation: landscape)) {
+    .main {
+
+        &-content {
+            border-radius: var(--br-m);
+        }
+
+        &__text {
+            padding: unset;
+            gap: 34px;
+        }
+        &__text-bottom {
+            margin: unset;
+        }
+
+        &__container {
+            padding-top: 16vh;
+        }
+
+        &__btn-arrow-down {
+            display: none;
+        }
+    }
+}
+
+// @include m.mobile {
+    @media (max-width: 480px), ((max-width: 860px) and (orientation: landscape)) {
+        
+    
+    .main {
+        width: 100%;
+        height: auto;
+
+        &__container {
+            padding-top: 92px;
+            flex-direction: column;
+        }
+
+        &__text {
+            gap: 48px;
+        }
+
+        &__banner {
+            position: static;
+            height: auto;
+            aspect-ratio: 1 / 1.27;
+            width: calc(100% + 34px);
+            transform: translateX(-16px);
+            margin-top: -80px;
+
+            img {
+                object-position: center center;
+            }
+        }
+
+        &-content {
+            margin-top: -28px;
+        }
+    }
+}
+
+@include m.mobile-s {
+    .main {
+        &__text {
+            gap: 36px;
+        }
+
+        &__banner {
+            height: calc(100vh - 180px);
+        }
+    }
+}

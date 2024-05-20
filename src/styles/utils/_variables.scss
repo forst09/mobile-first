@@ -1,0 +1,61 @@
+@use "mixin" as m;
+
+:root {
+    --bg-primary: #F9F9FA;
+    --bg-secondary: #EEEEF6;
+    --bg-tertiary: #FFFFFF;
+    --bg-dark: #292C46;
+
+    --text-primary: #292C46;
+    --text-secondary: #4757E1;
+    --text-tertiary: #727588;
+    --text-light: #A2A5B8;
+    --text-accent: #ffffff;
+    --text-accent-secondary: #FE5B00;
+
+    --accent: #4757E1;
+    --accent-secondary: #919AED;
+    --accent-terriary: #C8CDF7;
+    
+    --system-alert: #F64B25;
+    --system-warning: #FAB530;
+    --system-succes: #13BD94;
+
+    --btn: #4757E1;
+    --btn-hover: #5869FF;
+    --btn-visited: #9664FF;
+    --btn-disable: #D7D9E7;
+
+    --shadow-lg: 0px 20px 60px 0px rgba(41, 44, 70, 0.10);
+    --shadow-s: 5px 3px 10px 0px rgba(41, 44, 70, 0.05);
+    --shadow-focus: 0px 0px 4px 0px var(--focus);
+
+    --br-s: 12px;
+    --br-m: 20px;
+    --br-l: 40px;
+    --br-xl: 100px;
+
+    --focus: #22BDFF;
+
+    --stroke: #C8CDF7;
+    --stroke-hover: #919AED;
+
+    --section: 140px;
+    --section-lg: 280px;
+    --section-small: 80px;
+}
+
+@include m.tablet {
+    :root {
+        --section: 80px;
+        --section-lg: 80px;
+        --section-small: 40px;
+    }
+}
+
+@include m.mobile {
+    :root {
+        --section: 60px;
+        --section-lg: 60px;
+    }
+}

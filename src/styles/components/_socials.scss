@@ -1,0 +1,47 @@
+@use "../utils/mixin" as m;
+
+.socials {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 8px;
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 72px;
+        height: auto;
+        aspect-ratio: 1;
+        border: 1px solid rgba(255, 255, 255, 0.20);
+        border-radius: 50%;
+        transition: border 0.3s ease;
+
+        img {
+            width: 28px;
+            height: auto;
+            aspect-ratio: 1;
+        }
+
+        @include m.hover {
+            &:hover {
+                border: 1px solid rgba(255, 255, 255, 1);
+            }
+        }
+    }
+}
+
+@include m.laptop {
+    .socials {
+        transform: translate(37px, -10px);
+
+        &__item {
+            width: 60px;
+        }
+    }
+}
+
+@include m.tablet {
+    .socials {
+        transform: unset;
+    }
+}

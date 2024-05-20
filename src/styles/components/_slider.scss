@@ -1,0 +1,70 @@
+@use '../utils/mixin' as m;
+
+.slider{
+    &__btns {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    &__btn {
+        position: static;
+        margin: unset;
+        width: 60px;
+        height: auto;
+        aspect-ratio: 1;
+        border: 1px solid var(--stroke);
+        border-radius: 50%;
+        transition: border 0.3s ease;
+
+        &::after {
+            content: '';
+            width: 28px;
+            height: auto;
+            aspect-ratio: 1;
+            mask-repeat: no-repeat;
+            mask-size: contain;
+            background-color: var(--btn);
+        }
+
+        &.swiper-button-disabled {
+            opacity: 1;
+
+            &::after {
+                background-color: var(--stroke);
+            }
+        }
+
+        @include m.hover{
+
+            &:hover {
+                border: 1px solid var(--stroke-hover);
+            }
+        }
+
+        &--prev {
+            &::after {
+                mask-image: url("/icons/arrow-left.svg");
+            }
+        }
+
+        &--next {
+            &::after {
+                mask-image: url("/icons/arrow-right.svg");
+            }
+        }
+    }
+}
+
+@include m.mobile {
+    .slider {
+        &__btn {
+            width: 40px;
+
+            &::after {
+                width: 20px;
+            }
+        }
+    }
+}

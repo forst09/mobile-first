@@ -39,55 +39,46 @@
 }
 
 .btn-arrow-down {
-    padding: 20px;
-    border-radius: 50%;
-    background-color: var(--bg-secondary);
-    width: 68px;
-    height: auto;
-    aspect-ratio: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: none;
 }
 
-.arrow-animation__icons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
+// .arrow-animation__icons {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     overflow: hidden;
+//     width: 100%;
+//     height: 100%;
 
-    img {
-        // position: absolute;
-        padding: 8px 0;
-        animation: btn-arrow-down infinite 3s linear reverse;
-    }
-}
+//     img {
+//         padding: 8px 0;
+//         animation: btn-arrow-down infinite 3s linear reverse;
+//     }
+// }
 
-@keyframes btn-arrow-down {
-    0% {
-        transform: translateY(0);
-    }
+// @keyframes btn-arrow-down {
+//     0% {
+//         transform: translateY(0);
+//     }
 
-    20% {
-        transform: translateY(-100%);
-    }
+//     20% {
+//         transform: translateY(-100%);
+//     }
 
-    100% {
-        transform: translateY(-100%);
-    }
-}
+//     100% {
+//         transform: translateY(-100%);
+//     }
+// }
 
 .btn {
-    padding: 20px 32px;
+    padding: 14px 32px;
     background-color: var(--btn);
     color: var(--text-accent);
     border-radius: var(--br-xl);
     border: unset;
-    font-size: 16px;
-    line-height: 1.25em;
+    font-size: 14px;
+    line-height: 20px;
     font-weight: 600;
     text-align: center;
     transition: background-color 0.3s ease;
@@ -195,6 +186,26 @@
     }
 }
 
+@include m.mobile {
+
+    .btn-text {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .link-xl {
+        font-size: 24px;
+    }
+}
+
+@include m.tablet-s {
+    .btn {
+        padding: 20px 32px;
+        font-size: 16px;
+        line-height: 1.25em;
+    }
+}
+
 @include m.laptop {
     .btn-arrow-down {
         width: 63px;
@@ -207,21 +218,5 @@
 
     .btn-up {
         margin: 16px 0 0;
-    }
-}
-@include m.mobile {
-    .btn {
-        padding: 14px 32px;
-        font-size: 14px;
-        line-height: 20px;
-    }
-
-    .btn-text {
-        font-size: 14px;
-        line-height: 20px;
-    }
-
-    .link-xl {
-        font-size: 24px;
     }
 }

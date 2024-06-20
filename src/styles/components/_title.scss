@@ -121,3 +121,17 @@
         font-size: 24px;
     }
 }
+
+@include m.desctop {
+    h1 {
+        font-size: 92px;
+
+        span {
+            &::after {
+                width: 156px;
+                right: -56px;
+                top: -22px;
+            }
+        }
+    }
+}

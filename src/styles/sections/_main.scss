@@ -37,17 +37,17 @@
     }
 }
 
-@include m.mobile-s {
-    .main {
-        &__text {
-            gap: 36px;
-        }
+// @include m.mobile-s {
+//     .main {
+//         &__text {
+//             gap: 36px;
+//         }
 
-        &__banner {
-            height: calc(100vh - 180px);
-        }
-    }
-}
+//         &__banner {
+//             height: calc(100vh - 180px);
+//         }
+//     }
+// }
 
 // @include m.mobile {
     @media (min-width: 360px), ((max-width: 860px) and (orientation: landscape)) {        
@@ -168,5 +168,29 @@
             padding-top: 21vh;
         }
        
+    }
+}
+
+@include m.laptop {
+    .main {
+        height: 100vh;
+
+        &__banner {
+            img {
+                object-position: right;
+            }
+        }
+
+        &__text {
+            padding-bottom: 70px;
+        }
+    }
+}
+
+@include m.desctop {
+    .main {
+        &__container {
+            padding-top: 26.5vh;
+        }
     }
 }
